@@ -6,7 +6,9 @@ von a-Moll nach C-Dur, gut viereinhalb Minuten: vom nächtlichen Meer über
 die Berge durch einen Lichttunnel ins All zur Galaxie -- und wieder heim:
 Erdaufgang im Orbit, Wiedereintritt, über den Wolken mit einem Zug
 Wildgänse, an der Küste mit dem Leuchtturm vorbei bis zum Tagesanbruch auf
-dem Meer. Musik und Bild entstehen beide im Programm selbst.
+dem Meer, wo die Sonne aufgeht. Dazu Geräusche in jeder Szene -- Meer, Wind,
+Grollen, Gänse, Brandung, Möwen, Nebelhorn. Musik, Geräusche und Bild
+entstehen alle im Programm selbst.
 
 **Im Browser ansehen:** https://hasoschno70.github.io/Nachtflug/
 
