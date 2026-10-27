@@ -87,6 +87,13 @@
     function vielleichtStarten() {
       if (!gewuenscht || !bereit || quelle === null) return;
       start.style.display = "none";
+      // Im Browser macht die Seite das Vollbild (Knopf unten rechts, F11 des
+      // Browsers). SET_FULLSCREEN der Demo fragt nach der Groesse des
+      // Bildschirms, die raylib im Browser nicht kennt, und verstellt dabei
+      // den Zeichenpuffer -- je nach Bildschirm sah man nur einen Teil.
+      quelle = quelle
+        .replace("IF NOT imFenster THEN SET_FULLSCREEN(TRUE)", "' Vollbild: die Seite")
+        .replace(/IF KEYHIT\(KEY_F11\) THEN SET_FULLSCREEN\([^\n]*/, "' F11: der Browser");
       try {
         Module.FS.writeFile("/program.dh", quelle);
         Module.callMain([]);
