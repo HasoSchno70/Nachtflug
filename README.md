@@ -1,7 +1,7 @@
 # Nachtflug
 
 Eine Demo von Hans Schnorrenberger, geschrieben in
-[Drachenhauch](https://github.com/HasoSchno70/Drachenhauch): Trance in a-Moll
+[Drachenhauch](https://github.com/HasoSchno70/Drachenhauch): Trance
 von a-Moll nach C-Dur, gut viereinhalb Minuten: vom nächtlichen Meer über
 die Berge durch einen Lichttunnel ins All zur Galaxie -- und wieder heim:
 Erdaufgang im Orbit, Wiedereintritt, über den Wolken mit einem Zug
