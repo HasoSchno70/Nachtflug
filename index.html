@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nachtflug – eine Demo in Drachenhauch</title>
-  <meta name="description" content="Nachtflug: Trance-Musik und Bilder, ganz in einem Programm erzeugt. Eine Demo in Drachenhauch von Hans Schnorrenberger." />
+  <title>Nachtflug – Night Flight · eine Demo in Drachenhauch</title>
+  <meta name="description" content="Nachtflug: Trance-Musik und Bilder, ganz in einem Programm erzeugt. Eine Demo in Drachenhauch von Hans Schnorrenberger. -- Night Flight: trance music and pictures, all made by one program. A demo in Drachenhauch by Hans Schnorrenberger." />
   <style>
     :root { color-scheme: dark; }
     html, body { margin: 0; height: 100%; background: #000; overflow: hidden;
@@ -27,6 +27,9 @@
                     letter-spacing: 0.15em; }
     #start .klein { font-size: 13px; color: #6b7aa0; margin-top: 22px; }
     #start.laedt { cursor: progress; }
+    /* die englische Zeile unter der deutschen, kleiner und zurueckhaltender */
+    #start .en { margin-top: -6px; font-size: 0.82em; color: #6f7ea6; font-style: italic; }
+    #start .knopf .en { display: block; margin-top: 4px; font-size: 13px; color: #9fb0d8; letter-spacing: 0.1em; }
     #leiste { position: absolute; right: 12px; bottom: 10px; z-index: 3;
               display: flex; gap: 8px; opacity: 0.35; transition: opacity 0.3s; }
     #leiste:hover { opacity: 1; }
@@ -46,16 +49,19 @@
   <div id="start">
     <h1>NACHTFLUG</h1>
     <p>Vom Meer ins All und zurück bis zum Tagesanbruch – Musik und Bild aus einem Programm</p>
+    <p class="en">From the sea into space and back until daybreak – music and pictures from one program</p>
     <p>von Hans Schnorrenberger · geschrieben in <a href="https://github.com/HasoSchno70/Drachenhauch" onclick="event.stopPropagation()">Drachenhauch</a></p>
-    <div class="knopf" id="knopf">▶&nbsp;&nbsp;Starten (mit Ton)</div>
+    <p class="en">by Hans Schnorrenberger · written in Drachenhauch</p>
+    <div class="knopf" id="knopf"><span id="knopfText">▶&nbsp;&nbsp;Starten (mit Ton)</span><span class="en" id="knopfEn">Start (with sound)</span></div>
     <p class="klein">gut viereinhalb Minuten · Kopfhörer empfohlen · lädt etwa 20 MB</p>
+    <p class="klein en">about four and a half minutes · headphones recommended · loads about 20 MB</p>
   </div>
 
   <div id="leiste">
-    <button id="vollbild" title="Vollbild (F11)">⛶ Vollbild</button>
-    <button id="nochmal" title="Neu laden und noch einmal">↻ Nochmal</button>
+    <button id="vollbild" title="Vollbild · Full screen (F11)">⛶ Vollbild · Full screen</button>
+    <button id="nochmal" title="Neu laden und noch einmal · Reload and play again">↻ Nochmal · Again</button>
     <a href="https://github.com/HasoSchno70/Drachenhauch" target="_blank" rel="noopener">Drachenhauch</a>
-    <a href="THIRD-PARTY-NOTICES.txt" target="_blank" rel="noopener">Lizenzen</a>
+    <a href="THIRD-PARTY-NOTICES.txt" target="_blank" rel="noopener">Lizenzen · Licences</a>
   </div>
   <div id="meldung"></div>
 
@@ -107,7 +113,8 @@
       if (gewuenscht) return;
       gewuenscht = true;
       start.classList.add("laedt");
-      knopf.textContent = bereit ? "startet …" : "lädt …";
+      document.getElementById("knopfText").textContent = bereit ? "startet …" : "lädt …";
+      document.getElementById("knopfEn").textContent = bereit ? "starting …" : "loading …";
       vielleichtStarten();
     });
 
