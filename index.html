@@ -100,6 +100,14 @@
       quelle = quelle
         .replace("IF NOT imFenster THEN SET_FULLSCREEN(TRUE)", "' Vollbild: die Seite")
         .replace(/IF KEYHIT\(KEY_F11\) THEN SET_FULLSCREEN\([^\n]*/, "' F11: der Browser");
+      // Wenig Speicher (Handys): die Klaenge erst kurz vor ihrem Einsatz bauen
+      // und danach wieder freigeben -- alle vorab sind gut 400 MB, mehr als
+      // ein Handy einer Seite gibt. navigator.deviceMemory kennen nur Chrome
+      // und Edge; ohne es entscheidet die Art des Geraets. ?sparsam erzwingt es.
+      var gb = navigator.deviceMemory;
+      var wenig = /[?&]sparsam/.test(location.search) ||
+        (gb !== undefined ? gb < 8 : /iPhone|iPad|iPod|Android|Mobile/i.test(navigator.userAgent));
+      if (wenig) quelle = quelle.replace("DIM sparsam AS BOOLEAN", "DIM sparsam AS BOOLEAN : sparsam = TRUE");
       try {
         Module.FS.writeFile("/program.dh", quelle);
         Module.callMain([]);
